@@ -8,7 +8,7 @@
   var THREE = root ? root.THREE : (has_require && require('three'))
   if (!THREE) throw new Error('MeshLine requires three.js')
 
-  class MeshLine extends THREE.BufferGeometry {
+  export class MeshLine extends THREE.BufferGeometry {
     constructor()
     {
       super();
@@ -118,7 +118,7 @@
 		this.process();
   }
 
-  function MeshLineRaycast(raycaster, intersects) {
+  export function MeshLineRaycast(raycaster, intersects) {
     var inverseMatrix = new THREE.Matrix4()
     var ray = new THREE.Ray()
     var sphere = new THREE.Sphere()
@@ -490,7 +490,7 @@
     '}',
   ].join('\n')
 
-  class MeshLineMaterial extends THREE.ShaderMaterial {
+  export class MeshLineMaterial extends THREE.ShaderMaterial {
     constructor(parameters)
     {
       super({
